@@ -1,0 +1,35 @@
+COLLEGE ENQUIRY CHATBOT — PROCEDURE REPORT (DRAFT)
+
+Project: College Enquiry Chatbot | Problem Statement: 11 | Roll No.: 11
+Student: Nishant Patil | Class: [Enter class]
+GitHub: [Add repository URL]
+
+1. PROBLEM STATEMENT
+Admission offices receive repeated questions about course details, fees, admission procedures and campus facilities. This mini project provides a chat interface that answers student enquiries using a college information text file, helping students find basic information more easily.
+
+2. TOOLS AND MODEL
+The project is implemented in Python. Streamlit is used to create the chat user interface, the Groq API is used to access a language model, and python-dotenv loads the API key from a local .env file. College details are stored in college_info.txt. No model training is performed.
+
+3. PROCEDURE
+1. Created a project folder and set up a Python virtual environment.
+2. Installed Streamlit, Groq and python-dotenv using requirements.txt.
+3. Obtained an API key from the Groq developer console and stored it locally in .env. The key is not included in the project ZIP or Git repository.
+4. Created college_info.txt to store college information such as admission details, programmes, fee guidance, facilities and contact instructions. The supplied file is sample data and must be replaced with verified college information before final demonstration.
+5. Wrote the system prompt instructing the chatbot to use only the information in the text file, not to guess, and to state when information is unavailable.
+6. Implemented app.py to load the text, call the Groq chat API, display responses in Streamlit and retain conversation messages during the session.
+7. Added a Clear chat control and prepared sample questions to test answers and unsupported enquiries.
+8. Ran the app using streamlit run app.py and planned to capture screenshots of the live application.
+
+4. PROMPT USED
+“You are a helpful college enquiry assistant. Answer student questions using ONLY the college information provided. Do not use outside knowledge, guess, or invent facts. If the answer is not found in the information, say that the information is not available and ask the student to contact the college office. Keep answers clear, polite, and concise. If the question is unrelated to the college, politely explain that you can answer college enquiries only.”
+
+Prompt improvement: The prompt was tightened to explicitly restrict answers to the supplied information and provide a standard response when a fact is missing, reducing unsupported answers.
+
+5. TESTING AND RESULTS
+Test with at least five questions: (a) How can I apply for admission? (b) What courses are offered? (c) Tell me about facilities. (d) What are the fees? (e) What is the official contact number? (f) Tell me the capital of France. Record actual outputs and insert 1–2 screenshots from the running app here. Do not report tests as completed until they have been run.
+
+6. CHALLENGES
+A key challenge is ensuring that the model does not invent information that is absent from the file. The system prompt provides a restriction and fallback response. Another setup challenge is safely configuring the API key; using .env and .gitignore prevents the key from being included in the repository. API errors or network problems can be checked by verifying the key, internet connection and package installation.
+
+7. CONCLUSION
+The mini project provides a simple chatbot interface for college-related questions and grounds responses in a supplied text file. It is a basic prototype; its usefulness depends on maintaining accurate, complete and up-to-date college information. A future improvement could be adding document upload, citations to specific sections, and an administrator interface for updating information.
